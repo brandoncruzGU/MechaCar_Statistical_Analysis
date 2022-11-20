@@ -1,7 +1,7 @@
 #Import the dplyr libarary
 library(dplyr)
 
-#Import and save the MechaCar data into a data frame.
+#Import and read the MechaCar data into a data frame.
 mechatable <- read.csv(file = 'MechaCar_mpg.csv')
 
 #Perform a liner regression model on our data.
@@ -9,3 +9,14 @@ lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AW
 
 #Create a summary the linear model.
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data = mechatable))
+
+#Import and read the Suspension Coil file.
+suspension <- read.csv(file = 'Suspension_Coil.csv')
+
+#Create a summary table of the PSI column.
+summarize_PSI <- suspension %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+#Create a summary table that describes each manufacturing lot.
+lot_summary <- suspension %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+
