@@ -1,0 +1,11 @@
+#Import the dplyr libarary
+library(dplyr)
+
+#Import and save the MechaCar data into a data frame.
+mechatable <- read.csv(file = 'MechaCar_mpg.csv')
+
+#Perform a liner regression model on our data.
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data = mechatable)
+
+#Create a summary the linear model.
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data = mechatable))
