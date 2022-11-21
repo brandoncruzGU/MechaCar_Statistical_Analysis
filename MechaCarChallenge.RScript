@@ -19,4 +19,17 @@ summarize_PSI <- suspension %>% summarize(Mean = mean(PSI), Median = median(PSI)
 #Create a summary table that describes each manufacturing lot.
 lot_summary <- suspension %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
 
+#Perform a sample t-test compare the sample mean to the population mean of 1,500 pounds per square inch.
+t.test(suspension$PSI, mu=1500)
 
+#Perform a sample t-test of lot 1.
+lot_1 <- subset.data.frame(suspension, Manufacturing_Lot == "Lot1")
+t.test(lot_1$PSI, mu=1500)
+
+#Perform a sample t-test of lot 2.
+lot_2 <- subset.data.frame(suspension, Manufacturing_Lot == "Lot2")
+t.test(lot_2$PSI, mu=1500)
+
+#Perform a sample t-test of lot 3.
+lot_3 <- subset.data.frame(suspension, Manufacturing_Lot == "Lot3")
+t.test(lot_3$PSI, mu=1500)
