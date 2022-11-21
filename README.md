@@ -15,5 +15,16 @@ The summary indicates that vehicle length and ground clearance, as well as the i
 
 When looking at the overall results, we might assume that the current manufacturing data meets the design specifications. However, the current manufacturing data doesn't meet the design specifications because the variance of the suspension coil of Lot 3 exceeds 100 pounds per square inch.
 
+## T-Tests on Suspension Coils
 
+### Total Sample T-Test
+![image](https://user-images.githubusercontent.com/107777321/202932915-6a7936e9-ac18-46e0-adfc-6348451ca1ee.png)
+The p-value for the t-test of the overall sample is 0.06028 which puts it right above the significance level. This means that we do not have enough evidence to reject the null hypothesis and that the population and sample means are statistically similar.
+
+### T-tests by Lot
+![image](https://user-images.githubusercontent.com/107777321/202934418-2895ea88-eeb6-44c2-ba3d-e224e7001dc9.png)
+The p-value for the t-test of the sample data from lot 1 and 2 is 1 and 0.6072 respectively which means that we do not have enough evidence to reject the null hypothesis and that the population and sample means are statistically similar for these lots. The p-value for the t-test of the sample data for lot 3 is 0.04168 which suggests that we have enough evidence to reject the null and that the population and sample means are statistically different.
+
+## Study Design: MechaCar vs Competition
+To continue evaluating the performance of MechaCars versus other competitors, we can run an analysis that compares the costs, miles per gallon, and safety rating of other companies. The null hypothesis would be that MechaCars perform the same as the average competitor in affordability, safety, and efficiency. The alternative hypothesis would be that MechaCars performs better than the average competitor in affordability, safety, and efficiency. We would run an ANOVA statistical test to determine whether there are statistical differences for each metric. In order to run this test, we would need data from other similar competitors that contain their safety ratings, miles per gallon, and cost.
 
